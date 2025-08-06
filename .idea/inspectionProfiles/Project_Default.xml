@@ -1,0 +1,72 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="104" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="46">
+            <item index="0" class="java.lang.String" itemvalue="tqdm" />
+            <item index="1" class="java.lang.String" itemvalue="scikit-image" />
+            <item index="2" class="java.lang.String" itemvalue="scikit_image" />
+            <item index="3" class="java.lang.String" itemvalue="data" />
+            <item index="4" class="java.lang.String" itemvalue="matplotlib" />
+            <item index="5" class="java.lang.String" itemvalue="numpy" />
+            <item index="6" class="java.lang.String" itemvalue="Pillow" />
+            <item index="7" class="java.lang.String" itemvalue="torch" />
+            <item index="8" class="java.lang.String" itemvalue="torchvision" />
+            <item index="9" class="java.lang.String" itemvalue="chromadb" />
+            <item index="10" class="java.lang.String" itemvalue="scipy" />
+            <item index="11" class="java.lang.String" itemvalue="ws4py" />
+            <item index="12" class="java.lang.String" itemvalue="pygame" />
+            <item index="13" class="java.lang.String" itemvalue="cemotion" />
+            <item index="14" class="java.lang.String" itemvalue="pydub" />
+            <item index="15" class="java.lang.String" itemvalue="websocket-client" />
+            <item index="16" class="java.lang.String" itemvalue="azure-cognitiveservices-speech" />
+            <item index="17" class="java.lang.String" itemvalue="ultralytics" />
+            <item index="18" class="java.lang.String" itemvalue="PyQtWebEngine" />
+            <item index="19" class="java.lang.String" itemvalue="simhash" />
+            <item index="20" class="java.lang.String" itemvalue="edge_tts" />
+            <item index="21" class="java.lang.String" itemvalue="aliyun-python-sdk-core" />
+            <item index="22" class="java.lang.String" itemvalue="langchain" />
+            <item index="23" class="java.lang.String" itemvalue="tenacity" />
+            <item index="24" class="java.lang.String" itemvalue="flask_cors" />
+            <item index="25" class="java.lang.String" itemvalue="gevent" />
+            <item index="26" class="java.lang.String" itemvalue="pytz" />
+            <item index="27" class="java.lang.String" itemvalue="websockets" />
+            <item index="28" class="java.lang.String" itemvalue="openpyxl" />
+            <item index="29" class="java.lang.String" itemvalue="python" />
+            <item index="30" class="java.lang.String" itemvalue="transformers" />
+            <item index="31" class="java.lang.String" itemvalue="accelerate" />
+            <item index="32" class="java.lang.String" itemvalue="datasets" />
+            <item index="33" class="java.lang.String" itemvalue="sacrebleu" />
+            <item index="34" class="java.lang.String" itemvalue="evaluate" />
+            <item index="35" class="java.lang.String" itemvalue="streamlit" />
+            <item index="36" class="java.lang.String" itemvalue="streamlit-audiorec" />
+            <item index="37" class="java.lang.String" itemvalue="openai" />
+            <item index="38" class="java.lang.String" itemvalue="pillow" />
+            <item index="39" class="java.lang.String" itemvalue="flask" />
+            <item index="40" class="java.lang.String" itemvalue="tensorflow-macos" />
+            <item index="41" class="java.lang.String" itemvalue="ngrok" />
+            <item index="42" class="java.lang.String" itemvalue="pandas" />
+            <item index="43" class="java.lang.String" itemvalue="optuna" />
+            <item index="44" class="java.lang.String" itemvalue="scikit_learn" />
+            <item index="45" class="java.lang.String" itemvalue="clearml" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="openai.Message" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

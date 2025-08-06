@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BrainStack: Heterogeneous Neural Ensembles for EEG-to-Language Decoding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Helvetica, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+    h1, h2, h3 { color: #2c3e50; }
+    a { color: #007acc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section { margin-top: 40px; }
+    .img-container { text-align: center; margin: 20px 0; }
+    .img-container img { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    code { background: #f2f2f2; padding: 2px 4px; border-radius: 4px; }
+    pre { background: #f9f9f9; padding: 12px; border-left: 4px solid #007acc; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+<h1>BrainStack: Heterogeneous Neural Ensembles for EEG-to-Language Decoding</h1>
+<p><strong>Authors:</strong> Anonymous</p>
+<p><strong>Conference:</strong>AAAI 2025 (Under Submission)</p>
+<p><strong>Code:</strong> <a href="https://github.com/BtrrJL24/BrainStack" target="_blank">GitHub Repository</a></p>
+
+<div class="section">
+  <h2>Abstract</h2>
+  <p>We propose BrainStack, a functionally guided ensemble learning framework for robust EEG-based text decoding. By integrating spatially localized EEG branches with a global expert through a meta-level token fusion mechanism, BrainStack demonstrates state-of-the-art performance on the SS-EEG dataset, achieving 41.87% accuracy across 24 classes. Our method incorporates dynamic loss composition and distillation to balance generalization and specificity.</p>
+</div>
+
+<div class="section">
+  <h2>Highlights</h2>
+  <ul>
+    <li>🧩 <strong>Heterogeneous Architecture</strong>: Combines a global Transformer encoder (CTNet) with seven lightweight regional CNNs (CNet).</li>
+    <li>🎯 <strong>Gated Expert Fusion</strong>: A meta-learner adaptively fuses region-wise features with attention.</li>
+    <li>🔁 <strong>Knowledge Distillation</strong>: Aligns local branches with global semantic space.</li>
+    <li>📊 <strong>New Dataset</strong>: SS-EEG, 120+ hours of silent speech EEG recordings from 10 subjects.</li>
+    <li>📈 <strong>SOTA Performance</strong>: 41.87% accuracy on 24-way word classification task.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Model Architecture</h2>
+  <div class="img-container">
+    <img src="assets/brainstack_architecture.png" alt="BrainStack Architecture" />
+    <p><i>Figure: BrainStack integrates regional CNN experts and a global CTNet using a token-level meta-fusion mechanism.</i></p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Dataset (SS-EEG)</h2>
+  <p>SilentSpeech-EEG (SS-EEG) is a large-scale EEG dataset for silent speech decoding:</p>
+  <ul>
+    <li><strong>Subjects:</strong> 10</li>
+    <li><strong>Words:</strong> 24 (6 semantic classes)</li>
+    <li><strong>Trials per subject:</strong> 6000</li>
+    <li><strong>Channels:</strong> 122 EEG + 11 extras</li>
+    <li><strong>Sampling Rate:</strong> 1000 Hz</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Performance</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <tr><th>Model</th><th>Params</th><th>Avg. Accuracy (%)</th></tr>
+    <tr><td>EEGNet</td><td>8.5K</td><td>28.78</td></tr>
+    <tr><td>TCNet</td><td>78K</td><td>29.50</td></tr>
+    <tr><td>EEGConformer</td><td>0.75M</td><td>23.89</td></tr>
+    <tr><td><strong>BrainStack (Ours)</strong></td><td><strong>1.06M</strong></td><td><strong>41.87</strong></td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Regional Contributions</h2>
+
+<!--  <div class="img-container">-->
+<!--    <img src="assets/performance.png" alt="Performance Comparison Chart" />-->
+<!--    <p><i>Figure 1: BrainStack achieves the highest average accuracy on the SS-EEG dataset, significantly outperforming EEGNet, TCNet, and EEGConformer baselines.</i></p>-->
+<!--  </div>-->
+
+  <div class="img-container">
+    <img src="assets/performance.png" alt="Regional Contribution Heatmap" />
+    <p><i>Figure 2: Normalized regional importance (feature-level fusion weights) across individual subjects, derived from BrainStack’s gating mechanism.</i></p>
+  </div>
+
+  <h3>📊 Regional Contribution Heatmap</h3>
+  <p>This heatmap illustrates the normalized importance scores of each brain region across individual subjects, as determined by the feature-level gating weights in the BrainStack ensemble. Both rows (subjects) and columns (brain regions) are hierarchically clustered to highlight patterns of shared regional reliance.</p>
+
+  <ul>
+    <li><strong>Temporal lobes</strong> (Left & Right) consistently receive high weights, reflecting their dominant role in silent speech decoding, likely due to their involvement in auditory and phonological processing.</li>
+    <li><strong>Occipital region</strong> shows moderately high contributions in several high-performing subjects (e.g., S07, S01), suggesting potential visual involvement even during imagined articulation.</li>
+    <li><strong>Parietal and Central regions</strong> exhibit lower attribution overall, indicating weaker involvement in this specific task.</li>
+    <li><strong>Inter-subject variability</strong> is evident, motivating the need for personalized or adaptive decoding strategies.</li>
+  </ul>
+
+  <p>These findings validate the interpretability and neuroscientific grounding of the BrainStack fusion mechanism.</p>
+</div>
+
+<div class="section">
+  <h2>Paper</h2>
+  <p><a href="BrainStack_with_Appendix.pdf" target="_blank">Download PDF</a> (AAAI 2026 Submission)</p>
+</div>
+
+<div class="section">
+  <h2>BibTeX</h2>
+  <pre><code>@article{brainstack2025,
+  title={BrainStack: Heterogeneous Neural Ensembles for EEG-to-Language Decoding},
+  author={Anonymous},
+  journal={AAAI 2025 Submission},
+  year={2025},
+  url={https://staz24.github.io/BrainStack}
+}</code></pre>
+</div>
+
+<div class="section">
+  <h2>License</h2>
+  <p>This project is licensed under <strong>CC BY-NC 4.0</strong>. Free for academic and non-commercial research use.</p>
+</div>
+
+<div class="section">
+  <h2>Contact</h2>
+  <p>For questions, please open an issue in the GitHub repository. Author identities will be disclosed after review.</p>
+</div>
+
+</body>
+</html>
