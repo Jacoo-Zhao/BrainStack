@@ -1,14 +1,13 @@
 # BrainStack
 
-> Functionally Guided Meta-Ensemble Learning for EEG-Based Neural Decoding  
-> [AAAI 2026 Submission]  
-> Anonymous authors • Code and data will be released upon acceptance
+> Neuro-MoE with Functionally Guided Expert Routing for EEG-Based Language Decoding 
+> CVPR 2026 Findings (Accepted)
 
 ## 🔬 Overview
 
-**BrainStack** is a functionally guided, heterogeneous ensemble framework for EEG-based text decoding. Inspired by neuroscience, it partitions EEG signals by brain region and fuses local and global neural representations using a gated meta-learner.
+**BrainStack** is a functionally guided Neuro-MoE framework for EEG-based language decoding. Inspired by neuroscience, it partitions EEG signals by functional brain region and fuses local and global neural representations using adaptive expert routing.
 
-This repository contains the code and instructions to reproduce the experiments in our AAAI 2026 submission.
+This repository contains the code and instructions to reproduce the experiments in our CVPR 2026 paper.
 
 <div align="center">
   <img src="assets/brainstack_architecture.png" width="600"/>
@@ -21,8 +20,8 @@ This repository contains the code and instructions to reproduce the experiments 
 
 - 🧩 **Heterogeneous Architecture**: Combines a global Transformer encoder (CTNet) with seven lightweight regional CNNs (CNet).
 - 🎯 **Gated Expert Fusion**: Meta-learner adaptively fuses region-wise features with learnable attention weights.
-- 🔁 **Knowledge Distillation**: The global branch guides regional experts to align local semantics.
-- 📊 **New Dataset**: Introduces SS-EEG, one of the largest silent speech EEG datasets (120+ hours, 10 subjects, 24-word vocabulary).
+- 🔁 **Cross-Regional Distillation**: The global expert provides top-down supervision to regional experts for semantic alignment.
+- 📊 **New Dataset**: Introduces SS-EEG, one of the largest silent speech EEG datasets (120+ hours, 12 collected subjects, 24-word vocabulary).
 - 📈 **SOTA Performance**: Achieves 41.87% avg. accuracy on a 24-word classification task, surpassing CNN/Transformer baselines and pretrained models.
 
 ---
@@ -54,11 +53,11 @@ BrainStack/
 
 ## 🧠 Dataset
 
-We introduce **SilentSpeech-EEG (SS-EEG)**, a 120-hour EEG dataset for silent speech decoding across 12 subjects.  
+We introduce **SilentSpeech-EEG (SS-EEG)**, a 120-hour EEG dataset for silent speech decoding across 12 subjects (10 subjects in the current public release).  
 
 | Feature         | Value                 |
 |----------------|-----------------------|
-| Subjects        | 10 (final release)    |
+| Subjects        | 12 collected (10 public release) |
 | Words           | 24 (6 semantic classes) |
 | Trials / Subject | 6000                 |
 | Duration        | 120+ hours total      |
@@ -66,7 +65,7 @@ We introduce **SilentSpeech-EEG (SS-EEG)**, a 120-hour EEG dataset for silent sp
 | Sampling Rate   | 1000 Hz               |
 
 
-> 📌 *Due to ethics restrictions, anonymized EEG recordings will be released upon request after publication.*
+> 📌 *Due to ethics restrictions, the current public release includes 10 subjects. Access to the remaining anonymized recordings is available upon request, subject to approval.*
 
 ---
 
@@ -75,7 +74,7 @@ We introduce **SilentSpeech-EEG (SS-EEG)**, a 120-hour EEG dataset for silent sp
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/BtrrJL24/BrainStack.git
+git clone https://github.com/Jacoo-Zhao/BrainStack.git
 cd BrainStack
 ```
 
@@ -145,12 +144,12 @@ If you find this work useful, please cite:
 ---
 ## 📄 License
 
-The code is released under the **CC BY-NC 4.0 License** – free for academic and research use.
+The code is released under the **MIT License**. See `LICENSE` for details.
 
 ---
 
 ## 📬 Contact
 
-For any questions or collaborations, feel free to open an issue or contact the authors (details to appear after review).
+For any questions or collaborations, feel free to open an issue or contact the first author at `ziyi.zhao-2@student.uts.edu.au`.
 
 ---
