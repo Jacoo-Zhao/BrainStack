@@ -135,12 +135,11 @@ Training logs are automatically saved to WandB, and model checkpoints are saved 
 If you find this work useful, please cite:
 
 ```bibtex
-@article{brainstack2025,
-  title={BrainStack: Heterogeneous Neural Ensembles for EEG-to-Language Decoding},
-  author={Anonymous},
-  journal={AAAI 2026 Submission},
-  year={2025},
-  url={https://BtrrJL24.github.io/BrainStack}
+@article{zhao2026brainstack,
+  title={BrainStack: Neuro-MoE with Functionally Guided Expert Routing for EEG-Based Language Decoding},
+  author={Zhao, Ziyi and Zhou, Jinzhao and Jiang, Xiaowei and Cao, Beining and Ma, Wenhao and Shen, Yang and Li, Ren and Wang, Yu-Kai and Lin, Chin-teng},
+  journal={arXiv preprint arXiv:2601.21148},
+  year={2026}
 }
 ```
 ---
