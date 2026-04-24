@@ -12,6 +12,18 @@
     .section { margin-top: 40px; }
     .img-container { text-align: center; margin: 20px 0; }
     .img-container img { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .logo-row { display: flex; justify-content: center; align-items: center; gap: 20px; margin: 16px 0 8px; flex-wrap: wrap; }
+    .logo-slot { display: flex; justify-content: center; }
+    .logo-row img { max-height: 72px; width: auto; border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,0.12); background: #fff; }
+    .value-prop { margin: 12px 0 16px; padding: 12px 14px; background: #f4f8ff; border-left: 4px solid #2f6fe4; border-radius: 6px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 10px 0 8px; }
+    .stat-card { background: #fafcff; border: 1px solid #dbe7ff; border-radius: 8px; padding: 12px; text-align: center; }
+    .stat-value { font-size: 24px; font-weight: 700; color: #2f6fe4; line-height: 1.1; }
+    .stat-label { font-size: 13px; color: #4b5b75; margin-top: 4px; }
+    .quick-links { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 4px; }
+    .quick-links a { display: inline-block; padding: 8px 12px; border: 1px solid #c8dafd; border-radius: 999px; background: #f6faff; text-decoration: none; font-size: 14px; }
+    .quick-links a:hover { background: #eaf2ff; text-decoration: none; }
+    .performance-note { margin-top: 10px; padding: 10px 12px; background: #f8fbf7; border-left: 4px solid #3b8c43; border-radius: 6px; }
     code { background: #f2f2f2; padding: 2px 4px; border-radius: 4px; }
     pre { background: #f9f9f9; padding: 12px; border-left: 4px solid #007acc; overflow-x: auto; }
   </style>
@@ -19,9 +31,57 @@
 <body>
 
 <h1>BrainStack: Neuro-MoE with Functionally Guided Expert Routing for EEG-Based Language Decoding</h1>
+<div class="logo-row">
+  <div class="logo-slot">
+    <img src="../assets/uts_logo.png" alt="University of Technology Sydney Logo" />
+  </div>
+  <div class="logo-slot">
+    <img src="../assets/cvpr_2026_logo.jpeg" alt="CVPR 2026 Logo" />
+  </div>
+</div>
 <p><strong>Authors:</strong> Ziyi Zhao, Jinzhao Zhou, Xiaowei Jiang, Beining Cao, Wenhao Ma, Yang Shen, Ren Li, Yu-Kai Wang, Chin-Teng Lin</p>
 <p><strong>Conference:</strong> CVPR 2026 Findings (Accepted)</p>
 <p><strong>Code:</strong> <a href="https://github.com/Jacoo-Zhao/BrainStack" target="_blank">GitHub Repository</a></p>
+<p class="value-prop"><strong>Why this matters:</strong> BrainStack combines functionally guided regional experts with global routing to push EEG-based language decoding forward in both accuracy and neuroscientific interpretability.</p>
+
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="stat-value">41.87%</div>
+    <div class="stat-label">Average Accuracy</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">24</div>
+    <div class="stat-label">Word Classes</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">120+ h</div>
+    <div class="stat-label">EEG Recording Time</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">12</div>
+    <div class="stat-label">Collected Subjects</div>
+  </div>
+</div>
+
+<div class="quick-links">
+  <a href="BrainStack.pdf" target="_blank">Read Paper</a>
+  <a href="https://github.com/Jacoo-Zhao/BrainStack" target="_blank">View Code</a>
+  <a href="#performance">See Results</a>
+  <a href="#contact">Contact Author</a>
+</div>
+
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>
+    <strong>Google Scholar:</strong>
+    <a href="https://scholar.google.com/citations?user=BxGCRwoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
+      https://scholar.google.com/citations?user=BxGCRwoAAAAJ&amp;hl=en
+    </a>
+    <br />
+    <strong>Email:</strong>
+    <a href="mailto:ziyi.zhao-2@student.uts.edu.au">ziyi.zhao-2@student.uts.edu.au</a>
+  </p>
+</div>
 
 <div class="section">
   <h2>Abstract</h2>
@@ -61,7 +121,7 @@
   <p><em>Due to ethics restrictions, the current public release includes 10 subjects. Access to the remaining anonymized recordings is available upon request, subject to approval.</em></p>
 </div>
 
-<div class="section">
+<div class="section" id="performance">
   <h2>Performance</h2>
   <table border="1" cellpadding="8" cellspacing="0">
     <tr><th>Model</th><th>Params</th><th>Avg. Accuracy (%)</th></tr>
@@ -70,6 +130,7 @@
     <tr><td>EEGConformer</td><td>0.75M</td><td>23.89</td></tr>
     <tr><td><strong>BrainStack (Ours)</strong></td><td><strong>1.06M</strong></td><td><strong>41.87</strong></td></tr>
   </table>
+  <p class="performance-note"><strong>Key gain:</strong> BrainStack achieves <strong>+12.37</strong> absolute accuracy points over the strongest baseline (TCNet: 29.50% → 41.87%).</p>
 </div>
 
 <div class="section">
@@ -98,7 +159,7 @@
   <p>These findings validate the interpretability and neuroscientific grounding of the BrainStack fusion mechanism.</p>
 </div>
 
-<div class="section">
+<div class="section" id="paper">
   <h2>Paper</h2>
   <p><a href="BrainStack.pdf" target="_blank">Download PDF</a> (CVPR 2026 Findings)</p>
 </div>
@@ -117,11 +178,6 @@
 <div class="section">
   <h2>License</h2>
   <p>This project is licensed under the <strong>MIT License</strong>.</p>
-</div>
-
-<div class="section">
-  <h2>Contact</h2>
-  <p>For questions, please open an issue in the GitHub repository or contact the first author at <code>ziyi.zhao-2@student.uts.edu.au</code>.</p>
 </div>
 
 </body>
