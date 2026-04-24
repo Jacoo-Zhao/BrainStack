@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BrainStack: Heterogeneous Neural Ensembles for EEG-to-Language Decoding</title>
+  <title>BrainStack: Neuro-MoE with Functionally Guided Expert Routing for EEG-Based Language Decoding</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { font-family: Helvetica, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
@@ -18,14 +18,14 @@
 </head>
 <body>
 
-<h1>BrainStack: Heterogeneous Neural Ensembles for EEG-to-Language Decoding</h1>
-<p><strong>Authors:</strong> Anonymous</p>
-<p><strong>Conference:</strong>AAAI 2026 (Under Submission)</p>
-<p><strong>Code:</strong> <a href="https://github.com/BtrrJL24/BrainStack" target="_blank">GitHub Repository</a></p>
+<h1>BrainStack: Neuro-MoE with Functionally Guided Expert Routing for EEG-Based Language Decoding</h1>
+<p><strong>Authors:</strong> Ziyi Zhao, Jinzhao Zhou, Xiaowei Jiang, Beining Cao, Wenhao Ma, Yang Shen, Ren Li, Yu-Kai Wang, Chin-Teng Lin</p>
+<p><strong>Conference:</strong> CVPR 2026 Findings (Accepted)</p>
+<p><strong>Code:</strong> <a href="https://github.com/Jacoo-Zhao/BrainStack" target="_blank">GitHub Repository</a></p>
 
 <div class="section">
   <h2>Abstract</h2>
-  <p>We propose BrainStack, a functionally guided ensemble learning framework for robust EEG-based text decoding. By integrating spatially localized EEG branches with a global expert through a meta-level token fusion mechanism, BrainStack demonstrates state-of-the-art performance on the SS-EEG dataset, achieving 41.87% accuracy across 24 classes. Our method incorporates dynamic loss composition and distillation to balance generalization and specificity.</p>
+  <p>We propose BrainStack, a functionally guided Neuro-MoE framework for robust EEG-based language decoding. By integrating spatially localized EEG branches with a global expert through adaptive expert routing, BrainStack demonstrates state-of-the-art performance on the SS-EEG dataset, achieving 41.87% accuracy across 24 classes. The framework uses cross-regional distillation to align local and global representations.</p>
 </div>
 
 <div class="section">
@@ -34,7 +34,7 @@
     <li>🧩 <strong>Heterogeneous Architecture</strong>: Combines a global Transformer encoder (CTNet) with seven lightweight regional CNNs (CNet).</li>
     <li>🎯 <strong>Gated Expert Fusion</strong>: A meta-learner adaptively fuses region-wise features with attention.</li>
     <li>🔁 <strong>Knowledge Distillation</strong>: Aligns local branches with global semantic space.</li>
-    <li>📊 <strong>New Dataset</strong>: SS-EEG, 120+ hours of silent speech EEG recordings from 10 subjects.</li>
+    <li>📊 <strong>New Dataset</strong>: SS-EEG, 120+ hours of silent speech EEG recordings from 12 collected subjects (10 in current public release).</li>
     <li>📈 <strong>SOTA Performance</strong>: 41.87% accuracy on 24-way word classification task.</li>
   </ul>
 </div>
@@ -51,12 +51,14 @@
   <h2>Dataset (SS-EEG)</h2>
   <p>SilentSpeech-EEG (SS-EEG) is a large-scale EEG dataset for silent speech decoding:</p>
   <ul>
-    <li><strong>Subjects:</strong> 10</li>
+    <li><strong>Subjects:</strong> 12 collected (10 public release)</li>
     <li><strong>Words:</strong> 24 (6 semantic classes)</li>
     <li><strong>Trials per subject:</strong> 6000</li>
+    <li><strong>Duration:</strong> 120+ hours total</li>
     <li><strong>Channels:</strong> 122 EEG + 11 extras</li>
     <li><strong>Sampling Rate:</strong> 1000 Hz</li>
   </ul>
+  <p><em>Due to ethics restrictions, the current public release includes 10 subjects. Access to the remaining anonymized recordings is available upon request, subject to approval.</em></p>
 </div>
 
 <div class="section">
@@ -98,28 +100,28 @@
 
 <div class="section">
   <h2>Paper</h2>
-  <p><a href="BrainStack_with_Appendix.pdf" target="_blank">Download PDF</a> (AAAI 2026 Submission)</p>
+  <p><a href="BrainStack.pdf" target="_blank">Download PDF</a> (CVPR 2026 Findings)</p>
 </div>
 
 <div class="section">
   <h2>BibTeX</h2>
-  <pre><code>@article{brainstack2025,
-  title={BrainStack: Heterogeneous Neural Ensembles for EEG-to-Language Decoding},
-  author={Anonymous},
-  journal={AAAI 2026 Submission},
-  year={2025}
-  url={https://staz24.github.io/BrainStack}
+  <pre><code>@article{zhao2026brainstack,
+  title={BrainStack: Neuro-MoE with Functionally Guided Expert Routing for EEG-Based Language Decoding},
+  author={Zhao, Ziyi and Zhou, Jinzhao and Jiang, Xiaowei and Cao, Beining and Ma, Wenhao and Shen, Yang and Li, Ren and Wang, Yu-Kai and Lin, Chin-teng},
+  journal={arXiv preprint arXiv:2601.21148},
+  year={2026}
+  url={https://github.com/Jacoo-Zhao/BrainStack}
 }</code></pre>
 </div>
 
 <div class="section">
   <h2>License</h2>
-  <p>This project is licensed under <strong>CC BY-NC 4.0</strong>. Free for academic and non-commercial research use.</p>
+  <p>This project is licensed under the <strong>MIT License</strong>.</p>
 </div>
 
 <div class="section">
   <h2>Contact</h2>
-  <p>For questions, please open an issue in the GitHub repository. Author identities will be disclosed after review.</p>
+  <p>For questions, please open an issue in the GitHub repository or contact the first author at <code>ziyi.zhao-2@student.uts.edu.au</code>.</p>
 </div>
 
 </body>
